@@ -4,7 +4,7 @@ const ZaloBot = require("node-zalo-bot");
 const TOKEN = process.env.ZALO_BOT_TOKEN;
 
 if (!TOKEN) {
-  console.error("❌ Lỗi: Chưa cấu hình ZALO_BOT_TOKEN trong file .env");
+  console.error("❌ Lỗi: Chưa tìm thấy ZALO_BOT_TOKEN trong process.env hoặc file .env");
   process.exit(1);
 }
 
