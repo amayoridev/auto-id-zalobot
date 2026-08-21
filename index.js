@@ -42,3 +42,14 @@ bot.on("message", (msg) => {
 });
 
 console.log("🤖 Zalo Bot đã sẵn sàng và đang lắng nghe tin nhắn...");
+
+// Tạo HTTP server nhỏ để Northflank Health Check mở cổng thành công (tránh bị kill container)
+const http = require("http");
+const PORT = process.env.PORT || 3000;
+
+http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Zalo Bot is running!\n");
+}).listen(PORT, () => {
+  console.log(`🌐 HTTP Server đang chạy tại port ${PORT} cho Cloud Health Check`);
+});
