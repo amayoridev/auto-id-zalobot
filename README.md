@@ -16,9 +16,9 @@ Bot Zalo hỗ trợ lấy tự động **ID luồng chat (Chat ID)** và **ID ng
    ```
 
 3. **Cấu hình Token Bot:**
-   Mở file `index.js` và điền Token Zalo Bot của bạn vào biến `TOKEN`:
-   ```javascript
-   const TOKEN = "YOUR_ZALO_BOT_TOKEN";
+   Tạo file `.env` (hoặc sao chép từ `.env.example`) và điền Token Zalo Bot của bạn:
+   ```env
+   ZALO_BOT_TOKEN=YOUR_ZALO_BOT_TOKEN_HERE
    ```
 
 4. **Khởi chạy Bot:**

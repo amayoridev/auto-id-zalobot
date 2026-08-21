@@ -1,7 +1,12 @@
+require("dotenv").config();
 const ZaloBot = require("node-zalo-bot");
 
-// Thay TOKEN bot của bạn vào đây
-const TOKEN = "3516935780710466264:ugSstUzvFeZmZfcybnQrfsiuegGQekOlaVOxAzbPqtOnWjqsADfSVjQcraMywtBt";
+const TOKEN = process.env.ZALO_BOT_TOKEN;
+
+if (!TOKEN) {
+  console.error("❌ Lỗi: Chưa cấu hình ZALO_BOT_TOKEN trong file .env");
+  process.exit(1);
+}
 
 const bot = new ZaloBot(TOKEN, {
   polling: true
